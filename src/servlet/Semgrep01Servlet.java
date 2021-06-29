@@ -23,6 +23,14 @@ public class Semgrep01Servlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
+    	String search = request.getParameter("inputSearch");
+    	response.getWriter().write(search);
+    	
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
