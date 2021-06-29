@@ -28,7 +28,7 @@ public class Semgrep01Servlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
     	String search = request.getParameter("inputSearch");
-    	response.getWriter().write(search);
+    	response.getWriter().write(Encode.forHtml(search));
     	
     }
 
