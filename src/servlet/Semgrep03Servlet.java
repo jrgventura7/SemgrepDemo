@@ -10,7 +10,9 @@ public class Semgrep03Servlet {
 	
 	private boolean search(String search) {
 		
-		String query01 = "SELECT id, name, editorial, year FROM books WHERE name = " + search;  
+		// String query01 = "SELECT id, name, editorial, year FROM books WHERE name = " + search;  
+	
+		String query01 = "SELECT id, name, editorial, year FROM books WHERE name = ? ";  
 		
 		try {
             PreparedStatement ps = cn.prepareStatement(query01);
@@ -27,14 +29,6 @@ public class Semgrep03Servlet {
 	private boolean searchSecond(String search) {
 		
 		String query01 = "SELECT id, name, editorial, year FROM books WHERE name = " + search + " limit 1";  
-		
-		try {
-            PreparedStatement ps = cn.prepareStatement(query01);
-            ps.setString(1,search);
-            
-        } catch (SQLException e) {
-            
-        }
 		
 		return true;
 		
